@@ -1,0 +1,44 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h2>Add new Feedback</h2>
+<form action="/admin/testimotionals" method="POST" enctype="multipart/form-data">
+  <div class="mt-3">
+    
+    <textarea name="testimotional_content" id="feedback" class="form-control"></textarea>
+  </div>
+  <div class="mt-3">
+    <input type="text" class="form-control" placeholder="Testimotional writer" name="testimotional_writer">
+  </div>
+  <div class="mt-3">
+    <input type="file" class="form-control" placeholder="Writer image" name="writer_img">
+  </div>
+  <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
+<hr>
+<h2>All feedbacks</h2>
+
+<table class="table table-active">
+    <thead>
+      <tr>
+        <th scope="col">Feedback content</th>
+        <th scope="col">Feedback writer</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+     {% for testimotional in testimotionals %}
+     
+     
+      <tr>
+        <td>{{testimotional.testimotional_content}}</td>
+        <td>{{testimotional.testimotional_writer}}</td>
+        <td>
+            <a href="/admin/testimotional/delete/{{testimotional.id}}">Delete</a>
+            <a href="/admin/testimotional/update/{{testimotional.id}}">Update</a>
+        </td>
+      </tr>
+     
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

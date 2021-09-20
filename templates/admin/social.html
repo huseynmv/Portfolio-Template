@@ -1,0 +1,17 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h2>Add new work</h2>
+<form action="/admin/social" method="POST">
+  <div class="mt-3">
+    
+    <input type="text" class="form-control" placeholder="Social media name" name="social_name">
+  </div>
+  <div class="mt-3">
+    <input type="text" class="form-control" placeholder="Social media link" name="social_link">
+  </div>  
+  <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
+<hr>
+
+
+{% endblock %}

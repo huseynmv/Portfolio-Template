@@ -1,0 +1,105 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+
+
+        <!-- Information section starts -->
+        <section class="image-information-container">
+            <div class="image-information">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="image">
+                                <img src="static/app/images/WhatsApp Image 2020-11-29 at 01.16.18.jpeg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="information">
+                                <h4 style="color: rgb(150, 148, 148);">Back-end developer</h4>
+                                <h1>Huseyn Mammadov</h1>
+                                <p>Hi, I am a backend web developer. I can provide you with responsive, dynamic website releated with your bussiness. Also i make easy to use admin panel in order you to manage your website</p>
+                                <div class="cv-btn" style="color: #d5d5d5;">
+                                    Download CV
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- Information section end -->
+    <!-- What i do start -->
+        <section class="what-i-do">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="main-text-container">
+                            <div class="main-text">
+                                <h2>What I Do</h2>
+                                <div class="blue-gray-div">
+                                    <div class="blue-div"></div>
+                                    <div class="gray-div"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    {% for service in services %}
+                    <div class="col-sm-12 col-lg-6">
+                        <div class="marketing-container">
+                            <div class="copyright-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="32" fill="currentColor" class="bi bi-file-code" viewBox="0 0 16 16">
+                                    <path d="M6.646 5.646a.5.5 0 1 1 .708.708L5.707 8l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708l2-2zm2.708 0a.5.5 0 1 0-.708.708L10.293 8 8.646 9.646a.5.5 0 0 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2z"/>
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+                                  </svg>
+                            </div>
+                            <div class="copyright-text">
+                                <h3>{{service.service_title}}</h3>
+                                <p>
+                                {{service.service_desc}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    <!-- What i do end -->
+    <!-- Testimotionals start -->
+        <section class="testimotionals">
+            <div class="container-fluid">
+                <div class="row m-50">
+                    <div class="col-12">
+                        <div class="testimotionals-text">
+                            <h3>Testimotionals</h3>
+                            <div class="blue-gray-div">
+                                <div class="blue-div"></div>
+                                <div class="gray-div"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for testimotional in testimotionals %}
+                    <div class="col-sm-12 col-lg-6">
+                        <div class="testimotionals-content">
+                            <div class="test-image">
+                                <img src="static/uploads/{{testimotional.writer_img}}" alt="">
+                            </div>
+                            <div class="test-comment">
+                                <p>{{testimotional.testimotional_content}}</p>
+                                <span>{{testimotional.testimotional_writer}}</span>
+                            </div>
+                            <div class="test-who"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    <!-- Testimotionals end -->
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h2>Add new blog</h2>
+<form action="/admin/blog" method="POST" enctype="multipart/form-data">
+  <div class="mt-3">
+    
+    <input type="text" class="form-control" placeholder="Blog name" name="blog_name">
+  </div>
+  <div class="mt-3">
+    <input type="text" class="form-control" placeholder="Blog code link" name="blog_link">
+  </div>
+  <div class="mt-3">
+    <input type="file" class="form-control" placeholder="Blog image" name="blog_img">
+  </div>
+  
+  <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
+<hr>
+<h2>All blogs</h2>
+<table class="table table-active">
+    <thead>
+      <tr>
+        <th scope="col">Blog name</th>
+        <th scope="col">Blog link</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+     {% for blog in  blog %}
+     
+     
+      <tr>
+        <td>{{blog.blog_name}}</td>
+        <td>{{blog.blog_link}}</td>
+        <td>
+            <a href="/admin/blog/delete/{{blog.id}}">Delete</a>
+            <a href="/admin/blog/update/{{blog.id}}">Update</a>
+        </td>
+      </tr>
+     
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

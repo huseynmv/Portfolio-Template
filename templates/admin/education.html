@@ -1,0 +1,51 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h2>Add new Education</h2>
+<form action="/admin/education" method="POST">
+  <div class="mt-3">
+    
+    <input type="text" class="form-control" placeholder="Education year" name="education_year">
+  </div>
+  <div class="mt-3">
+    <input type="text" class="form-control" placeholder="Education place" name="education_place">
+  </div>
+  <div class="mt-3">
+    <input type="text" class="form-control" placeholder="Education title" name="education_title">
+  </div>
+  <div class="mt-3">
+    <textarea name="education_desc" placeholder="Education description" id="" cols="30" rows="10"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
+<hr>
+<h3>Current educations</h3>
+
+<table class="table table-active">
+    <thead>
+      <tr>
+        <th scope="col">Education title</th>
+        <th scope="col">Education description</th>
+        <th scope="col">Education place</th>
+        <th scope="col">Education year</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+     {% for education in education %}
+     
+     
+      <tr>
+        <td>{{education.education_title}}</td>
+        <td>{{education.education_desc}}</td>
+        <td>{{education.education_place}}</td>
+        <td>{{education.education_year}}</td>
+        <td>
+            <a href="/admin/education/delete/{{education.id}}">Delete</a>
+            <a href="/admin/education/update/{{education.id}}">Update</a>
+        </td>
+      </tr>
+     
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

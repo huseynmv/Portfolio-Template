@@ -1,0 +1,44 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h2>Add new service</h2>
+<form action="/admin/services" method="POST">
+  <div class="mt-3">
+    
+    <input type="text" class="form-control" placeholder="Service title" name="service_title">
+  </div>
+  <div class="mt-3">
+    <input type="text" class="form-control" placeholder="Service icon" name="service_icon">
+  </div>
+  <div class="mt-3">
+    <textarea name="service_desc" cols="30" type="text" class="form-control" placeholder="Service description"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
+<hr>
+<h2>All services</h2>
+
+<table class="table table-active">
+    <thead>
+      <tr>
+        <th scope="col">Service title</th>
+        <th scope="col">Service Description</th>
+        <th scope="col">Service icon</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for service in services %}
+      <tr>
+        <td>{{service.service_title}}</td>
+        <td>{{service.service_desc}}</td>
+        <td>{{service.service_icon}}</td>
+        <td>
+            <a href="/admin/services/delete/{{service.id}}">Delete</a>
+            <a href="/admin/services/update/{{service.id}}">Update</a>
+        </td>
+      </tr>
+      {% endfor %}
+      
+    </tbody>
+  </table>
+{% endblock %}

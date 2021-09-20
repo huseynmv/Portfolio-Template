@@ -1,0 +1,25 @@
+{% extends "app/base.html" %}
+{% block content %}
+
+
+<section class="container-fluid text">
+    <div class="col-12"></div>
+        <div class="portfolio-text">
+            <h1>Blog</h1>
+        </div>
+</section>
+<section class="blog-container">
+    <div class="blog-grid-container">
+        {% for blog in blog %}
+        <a href="{{blog.blog_link}}">
+            <div class="blog-items">
+                <img src="static/uploads/{{blog.blog_img}}" alt="">
+                <div class="top-left-text">{{blog.blog_name}}</div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+
+
+{% endblock %}

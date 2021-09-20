@@ -1,0 +1,29 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+
+<!-- Navbar section end -->
+<section class="container-fluid text">
+    <div class="col-12"></div>
+        <div class="portfolio-text">
+            <h1>Portfolio</h1>
+        </div>
+</section>
+<section class="portfolio-type">
+    <div class="col-12">
+        
+    </div>
+</section>
+<section class="portfolio-projects">
+    {% for work in  work%}
+    <a href="{{work.portfolio_link}}">
+        <div class="portfolio-items">
+            <img src="static/uploads/{{work.portfolio_img}}" alt="">
+            <div class="top-left-text">{{work.portfolio_name}}</div>
+        </div>
+    </a>
+    {% endfor %}
+    
+</section>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="static/app/css/grid.css">
+    <link rel="stylesheet" href="static/app/css/common.css">
+    <link rel="stylesheet" href="static/app/css/style.css">
+    
+</head>
+<body>
+    
+    
+          <!-- Navbar section start -->
+            <section id="navbar">
+                <div class="container-fluid">
+                    <div class="row bg-main" id="navbarr">
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="text-logo">
+                                <div class="logo-symbol icon-color">
+                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                                    </svg>
+                                </div>
+                                
+                                    <h3><a href="/" style="list-style: none; text-decoration: none"><p style="color: #ddd;">Huseyn Mammadov</p></a></h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 px-0">
+                            <div class="navbar-menu">
+                                <ul>
+                                    <li><a href="/">About</a></li>
+                                    <li><a href="/resume">Resume</a></li>
+                                    <li><a href="/portfolio">Portfolio</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/contact">Contacts</a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger">
+                                <ul>
+                                    <li><a href="/">About</a></li>
+                                    <li><a href="/resume">Resume</a></li>
+                                    <li><a href="/portfolio">Portfolio</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/contact">Contacts</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% block content %}
+
+            {% endblock %}
+            <section class="footer">
+                <div class="footer-container">
+                    <div class="footer-social">
+                        <ul>
+                            <li><a style="list-style: none; text-decoration: none; color:#ddd" href="https://twitter.com/Huseinmv">Twitter</a></li>
+                            <li><a style="list-style: none; text-decoration: none; color:#ddd" href="https://www.facebook.com/mammadovh/">Facebook</a></li>
+                            <li><a style="list-style: none; text-decoration: none; color:#ddd" href="https://www.instagram.com/husssein.mv/">Instagram</a></li>
+                            <li><a style="list-style: none; text-decoration: none; color:#ddd" href="https://www.linkedin.com/in/huseyn-mammadov-b8578b166/">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                    <!-- <div class="footer-copyright">
+                        <p style="color: #ddd;">© 2021 All rights reserved.</p>
+                    </div> -->
+                </div>
+            </section>
+    <script src="static/app/js/app.js"></script>
+    <script src="https://kit.fontawesome.com/56d476d704.js" crossorigin="anonymous"></script>
+<!-- Footer end -->
+</body>
+</html>
